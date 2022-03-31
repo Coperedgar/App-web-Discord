@@ -1,0 +1,200 @@
+
+<!--74 de encabezado 121-189-->
+{% load static %} 
+<!DOCTYPE html>
+<html>
+<head>
+<title>DISCORD {% block titulo %} {% endblock %}</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<link href="{% static 'layout/styles/layout.css' %}" rel="stylesheet" type="text/css" media="all">
+{% block estilos %}
+
+{% endblock %}
+
+</head>
+<body id="top">
+
+<!-- ################################################################################################ -->
+
+
+
+
+
+
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row0">
+  <div id="topbar" class="clear">
+
+  
+  <!-- <form action="/buscar/" method="get">
+      <label for="name">Buscar <span>*</span></label>
+      <input type="text" name="busqueda" id="busqueda" value="" size="22">
+      <p><input type="submit" value="Submit Form"></p>
+  </form>
+  &nbsp; -->
+
+
+
+
+
+
+
+    <!-- ################################################################################################ -->
+    <div class="fl_left">
+      <ul class="nospace inline">
+        <li><i class="fa fa-phone"></i> 4471165588</li>
+        <li><i class="fa fa-envelope-o"></i> discord@gmail.com</li>
+      </ul>
+    </div>
+        
+    <div class="fl_right">
+      <ul id="yo" class="faico clear">
+
+
+        <!-- <form action="/buscar/" method="get">
+          <li><input type="text" name="busqueda" id="busqueda" value="" size="22" placeholder="Buscar..."></li>
+          <li><p><input type="submit" value="Submit Form" ></p></li>
+        </form>
+      -->
+
+        
+        
+        <li><form action="/buscar/" method="get"></li>
+        <li><input type="text" name="busqueda" value="" size="22" placeholder="Buscar..."></li>
+
+        <!-- <li><button type="submit"  value="submit" class="boton btn-success">Buscar</button></li> -->
+        <li><button type="submit"  value="submit" class="boton btn-success">Buscar    <i class="fa fa-search"></i></button></li> 
+        <li></form></li>
+        <li><a target="Blank" class="faicon-facebook" href="https://www.facebook.com/discord/"><i class="fa fa-facebook"></i></a></li>
+        <li><a target="Blank" class="faicon-twitter" href="https://twitter.com/discord"><i class="fa fa-twitter"></i></a></li>
+        <li><a target="Blank" class="faicon-instagram" href="https://www.instagram.com/discord/"><i class="fa fa-instagram"></i></a></li>
+        <li><a target="Blank" class="faicon-youtube" href="https://www.youtube.com/discord"><i class="fa fa-youtube"></i></a></li>
+       
+      </ul>
+    </div>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row1">
+  <header id="header" class="clear"> 
+    <!-- ################################################################################################ -->
+    <div id="logo" class="fl_left">
+      <h1><a href="index.html">DISCORD</a></h1>
+    </div>
+    <nav id="mainav" class="fl_right">
+      <ul class="clear">
+        <li ><a href="{% url 'inicio' %}">Inicio</a></li>
+        <li ><a href="{% url 'gallery' %}">Galeria</a></li>
+        <li ><a href="{% url 'sidebarl' %}">Noticias</a></li>
+        <li ><a href="{% url 'basic' %}">Comentarios</a></li>
+        <li ><a href="{% url 'full' %}">Acerca de</a></li>
+        <li class="active"><a href="/admin/">Admin</a></li>
+        
+      
+
+        
+           <!-- <li><a class="drop" href="#">Historia</a>-->
+              <ul>
+                <!--<li><a href="{% url 'basic' %}">level 2</a></li>
+                <li><a href="{% url 'side' %}">Level 3</a></li>-->
+              </ul>
+            </li>
+          </ul>
+        </li>
+     
+        
+      </ul>
+    </nav>
+    <!-- ################################################################################################ -->
+  </header>
+</div>
+
+<!--contenido-->
+
+{% block contenido %}
+
+{% endblock %}
+
+<!--footer-->
+
+<!-- <div class="wrapper row5">
+    <footer id="footer" class="clear"> 
+      <div class="one_quarter first">
+        <h6 class="title">Contacto</h6>
+        <address class="btmspace-15">
+        Discord Inc<br>
+        
+
+        
+        </address>
+        <ul class="nospace">
+          <li class="btmspace-10"><span class="fa fa-phone"></span> 4471165588</li>
+          <li><span class="fa fa-envelope-o"></span> discord@gmail.com</li>
+        </ul>
+        
+      </div>
+      <div class="one_quarter">
+        <h6 class="title">Links rápidos</h6>
+        <ul class="nospace linklist">
+          <li><a href="{% url 'inicio' %}">Inicio</a></li>
+          <li><a href="{% url 'sidebarl' %}">Noticias</a></li>
+          <li><a href="{% url 'gallery' %}">Galeria</a></li>
+          <li><a href="{% url 'full' %}">Acerca de</a></li>
+          <li><a href="{% url 'basic' %}">Comentarios</a></li>
+        </ul>
+      </div>
+      <div class="one_quarter">
+        <h6 class="title">Fecha de actualización</h6>
+        <article>
+          {% for actualizaciones in Actualizacion  %}
+          <h2 class="nospace">{{ actualizaciones.nombre_act }}</h2>
+          <time class="smallfont" datetime="2022-02-02">Wednesday, 10<sup>th</sup> February 2022</time>
+         
+          {% endfor %}
+     
+        </article>
+      </div>
+      <div class="one_quarter">
+        <h6 class="title">Contactanos</h6>
+        <form method="post" action="#">
+          <fieldset>
+            <legend>Newsletter:</legend>
+            <input class="btmspace-15" type="text" value="" placeholder="Nombre">
+            <input class="btmspace-15" type="text" value="" placeholder="Correo">
+            <button type="submit" value="submit">Enviar</button>
+          </fieldset>
+        </form>
+      </div>
+    </footer> -->
+
+
+  </div>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <div class="wrapper row6">
+    <div id="copyright" class="clear"> 
+      <!-- ################################################################################################ -->
+      <p class="fl_left">Copyright &copy; 2018 - All Rights Reserved - <a href="#">Discord Inc</a></p>
+      <p class="fl_right">Created by Edgar <a target="_blank" href="https://www.os-templates.com/" title="Free Website Templates">Correa Perea</a></p>
+      <!-- ################################################################################################ -->
+    </div>
+  </div>
+  <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a> 
+<!-- JAVASCRIPTS -->
+<script src="{% static 'layout/scripts/jquery.min.js' %}"></script>
+<script src="{% static 'layout/scripts/jquery.backtotop.js' %}"></script>
+<script src="{% static 'layout/scripts/jquery.mobilemenu.js' %}"></script>
+{% block scripts %}
+
+{% endblock %}
+</body>
+</html>

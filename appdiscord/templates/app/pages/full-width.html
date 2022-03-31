@@ -1,0 +1,112 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block contenido %}
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row2 bgded" style="background-image:url('{% static 'images/demo/backgrounds/5.png' %}');">
+  <div class="overlay">
+    <div id="breadcrumb" class="clear"> 
+      <!-- ################################################################################################ -->
+      <ul>
+        <!-- <li><a href="{% url 'inicio' %}">Inicio</a></li>
+        <li><a href="{% url 'sidebarl' %}">Noticias</a></li>
+        <li><a href="{% url 'basic' %}">Comentarios</a></li>
+        <li ><a href="{% url 'gallery' %}">Galeria</a></li> -->
+        <li><a href="{% url 'full' %}">Acerca de</a></li>
+      </ul>
+      <!-- ################################################################################################ -->
+    </div>
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row3">
+  <main class="container clear"> 
+    <!-- main body -->
+    <!-- ################################################################################################ -->
+    <div class="content"> 
+      <!-- ################################################################################################ -->
+      <h1>Nuestra historia</h1>
+      <img class="imgr borderedbox inspace-5" src="{% static 'images/demo/gallery/2f.png' %}" alt="">
+      <p>Discord consiste en ofrecer a la gente la posibilidad de crear un lugar en el que hallar un sentimiento de pertenencia en sus vidas. Queremos que te resulte más fácil hablar a menudo con las personas que te importan. Deseamos que formes verdaderos vínculos con tus amigos y comunidades cercanos o de todo el mundo. La originalidad, la fiabilidad, la diversión y 
+        la simpatía son los valores que unen a nuestros usuarios y empleados en Discord.</p>
+      <p>Discord se creó para resolver un gran problema: cómo comunicarse con amigos de todo el mundo mientras juegas en línea. Desde la infancia, sus fundadores, Jason Citron y Stan Vishnevskiy, compartían una afición por los videojuegos que les permitió atesorar amistades y conexiones que formaban mientras jugaban. En aquel entonces, todas las herramientas creadas para este propósito eran lentas, poco fiables y complejas. Jason y Stan sabían que podían ofrecer un servicio mejor que animase a hablar, ayudase a formar recuerdos y 
+        recrease el sentimiento de compañerismo que todos encontraban en los videojuegos.</p>
+      <img class="imgl borderedbox inspace-5" src="{% static 'images/demo/gallery/5f.png' %}" alt="">
+      <p>Por tanto, en 2015, Stan y Jason comenzaron a desarrollar Discord. Le encantó a gente de todo el mundo. El programa facilitaba la verdadera comunicación con amigos, lo que iba más allá de las charlas cotidianas: las personas se mantenían en contacto con sus diferentes comunidades. La aplicación favorecía la participación en conversaciones al permitir cambiar entre texto, voz y vídeo para hablar. La tecnología era compleja, pero el objetivo, sencillo: convertir Discord en un lugar agradable y acogedor en el que reunir a tus comunidades y amigos. En pocos 
+        años, Discord comenzó a despegar y aparecieron personas que adoraban nuestro producto por todo el mundo.</a>.</p>
+      <h2>¿Dónde estamos?</h2>
+      <p>Todo el mundo utiliza Discord, desde clubes de senderismo locales a comunidades artísticas o grupos de estudio. Discord ha reunido millones de usuarios que crean lugares para sus amigos y comunidades, donde hablan más de 4 horas diarias en la plataforma. Ahora se ha convertido en el lugar donde el mundo habla, pasa el rato y forma vínculos. Discord permite a cualquiera crear un espacio del que formar parte, igual que les ocurrió a Jason y Stan.</a></p>
+      
+      <div class="scrollable">
+        
+      
+      <!-- ################################################################################################ -->
+    </div>
+    <!-- ################################################################################################ -->
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+
+<div class="wrapper row5">
+  <footer id="footer" class="clear"> 
+    <div class="one_quarter first">
+      <h6 class="title">Contacto</h6>
+      <address class="btmspace-15">
+      Discord Inc<br>
+      
+
+      
+      </address>
+      <ul class="nospace">
+        <li class="btmspace-10"><span class="fa fa-phone"></span> 4471165588</li>
+        <li><span class="fa fa-envelope-o"></span> discord@gmail.com</li>
+      </ul>
+      
+    </div>
+    <div class="one_quarter">
+      <h6 class="title">Links rápidos</h6>
+      <ul class="nospace linklist">
+        <li><a href="{% url 'inicio' %}">Inicio</a></li>
+        <li><a href="{% url 'sidebarl' %}">Noticias</a></li>
+        <li><a href="{% url 'gallery' %}">Galeria</a></li>
+        <li><a href="{% url 'full' %}">Acerca de</a></li>
+        <li><a href="{% url 'basic' %}">Comentarios</a></li>
+      </ul>
+    </div>
+    <div class="one_quarter" id="yon">
+      <h6 class="title">Fecha de actualización</h6>
+      <article>
+        {% for actualizaciones in Actualizacion  %}
+        <h2 class="nospace">{{ actualizaciones.nombre_act }}</h2>
+        <time class="smallfont" datetime="2022-02-02">{{ actualizaciones.fecha_act }}</time>
+       
+        {% endfor %}
+   
+      </article>
+    </div>
+    <div class="one_quarter">
+      <h6 class="title">Contactanos</h6>
+      <form method="post" action="#">
+        <fieldset>
+          <legend>Newsletter:</legend>
+          <input class="btmspace-15" type="text" value="" placeholder="Nombre">
+          <input class="btmspace-15" type="text" value="" placeholder="Correo">
+          <button type="submit" value="submit">Enviar</button>
+        </fieldset>
+      </form>
+    </div>
+  </footer>
+
+
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+{% endblock %}
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->

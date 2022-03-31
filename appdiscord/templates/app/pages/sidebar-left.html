@@ -1,0 +1,134 @@
+
+{% extends "app/base.html" %}
+{% load static %}
+
+
+
+{% block contenido %}
+
+
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row2 bgded" style="background-image:url('{% static 'images/demo/backgrounds/3.png' %}');">
+  <div class="overlay">
+    <section id="pageintro" class="clear"> 
+      <!-- ################################################################################################ -->
+      <div class="center btmspace-80">
+        <h2 class="heading xxl uppercase btmspace-30">DISCORD</h2>
+        <p class="xl nospace capitalise">Noticias de último momento
+        </p>
+      </div>
+
+      
+      <!-- <ul class="nospace group services">
+
+
+        {% for noticias in Noticias  %}
+        <li class="">
+         <article class="overlay"><a target="Blank" href="https://www.npr.org/2021/03/31/983157378/group-chatting-platform-discord-might-change-social-media-with-their-business-mo"><i class="fa fa-info"></i></a>
+            <h6 class="heading"> {{ noticias.encabezado }} </h6>
+            <p> {{ noticias.descripcion }} &hellip;</p>
+            <footer><a target="Blank" href="https://www.npr.org/2021/03/31/983157378/group-chatting-platform-discord-might-change-social-media-with-their-business-mo">Leer más &raquo;</a></footer>
+          </article>
+        </li>
+        <br> <br>
+        {% endfor %}
+
+
+        </ul> -->
+
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+    <!-- ################################################################################################ -->
+    <div class="clear"></div>
+  </section>
+</div>
+
+
+
+<div class="container">
+  <div class="row">
+    {% for noticias in Noticias  %}
+    <div class="col-6 col-sm-4 col-md-3">
+      <div class="card text-center border-info">
+        <div class="card">
+          <div class="card-body">
+            <h5>{{ noticias.encabezado }}</h5>
+            <p class="card-text">A ca algo</p>
+            <a href="#" class="btn btn-prymary">Ver mas </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+
+
+<div class="wrapper row5">
+  <footer id="footer" class="clear"> 
+    <div class="one_quarter first">
+      <h6 class="title">Contacto</h6>
+      <address class="btmspace-15">
+      Discord Inc<br>
+      
+
+      
+      </address>
+      <ul class="nospace">
+        <li class="btmspace-10"><span class="fa fa-phone"></span> 4471165588</li>
+        <li><span class="fa fa-envelope-o"></span> discord@gmail.com</li>
+      </ul>
+      
+    </div>
+    <div class="one_quarter">
+      <h6 class="title">Links rápidos</h6>
+      <ul class="nospace linklist">
+        <li><a href="{% url 'inicio' %}">Inicio</a></li>
+        <li><a href="{% url 'sidebarl' %}">Noticias</a></li>
+        <li><a href="{% url 'gallery' %}">Galeria</a></li>
+        <li><a href="{% url 'full' %}">Acerca de</a></li>
+        <li><a href="{% url 'basic' %}">Comentarios</a></li>
+      </ul>
+    </div>
+    <div class="one_quarter" id="yon">
+      <h6 class="title">Fecha de actualización</h6>
+      <article>
+        {% for actualizaciones in Actualizacion  %}
+        <h2 class="nospace">{{ actualizaciones.nombre_act }}</h2>
+        <time class="smallfont" datetime="2022-02-02">{{ actualizaciones.fecha_act }}</time>
+       
+        {% endfor %}
+   
+      </article>
+    </div>
+    <div class="one_quarter">
+      <h6 class="title">Contactanos</h6>
+      <form method="post" action="#">
+        <fieldset>
+          <legend>Newsletter:</legend>
+          <input class="btmspace-15" type="text" value="" placeholder="Nombre">
+          <input class="btmspace-15" type="text" value="" placeholder="Correo">
+          <button type="submit" value="submit">Enviar</button>
+        </fieldset>
+      </form>
+    </div>
+  </footer>
+
+
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+
+{% endblock %}

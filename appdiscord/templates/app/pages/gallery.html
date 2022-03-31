@@ -1,0 +1,143 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block contenido %}
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row2 bgded" style="background-image:url('{% static 'images/demo/backgrounds/2.png' %}');">
+  <div class="overlay">
+    <div id="breadcrumb" class="clear"> 
+      <!-- ################################################################################################ -->
+      <ul>
+        <!-- <li><a href="{% url 'inicio' %}">Inicio</a></li>
+        <li><a href="{% url 'sidebarl' %}">Noticias</a></li>
+        <li><a href="{% url 'basic' %}">Comentarios</a></li>
+        <li><a href="{% url 'full' %}">Acerca de</a></li> -->
+        <li ><a href="{% url 'gallery' %}">Galeria</a></li>
+      </ul>
+      <!-- ################################################################################################ -->
+    </div>
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row3">
+  <main class="container clear"> 
+    <!-- main body -->
+    <!-- ################################################################################################ -->
+    <div class="content"> 
+      <!-- ################################################################################################ -->
+      <div id="gallery">
+        <figure>
+          <header class="heading">Galeria de imagenes</header>
+          <ul class="nospace clear">
+            <li class="one_quarter first"><a href="#"><img src="{% static 'images/demo/gallery/1f.png' %}" alt=""></a></li>
+            <li class="one_quarter"><a href="#"><img src="{% static 'images/demo/gallery/2f.png' %}" alt=""></a></li>
+            <li class="one_quarter"><a href="#"><img src="{% static 'images/demo/gallery/3f.png' %}" alt=""></a></li>
+            <li class="one_quarter"><a href="#"><img src="{% static 'images/demo/gallery/4f.png' %}" alt=""></a></li>
+            <li class="one_quarter first"><a href="#"><img src="{% static 'images/demo/gallery/5f.png' %}" alt=""></a></li>
+            <li class="one_quarter"><a href="#"><img src="{% static 'images/demo/gallery/6f.png' %}" alt=""></a></li>
+            <li class="one_quarter"><a href="#"><img src="{% static 'images/demo/gallery/7f.png' %}" alt=""></a></li>
+            <li class="one_quarter"><a href="#"><img src="{% static 'images/demo/gallery/8f.png' %}" alt=""></a></li>
+            <li class="one_quarter first"><a href="#"><img src="{% static 'images/demo/gallery/9f.png' %}" alt=""></a></li>
+            <li class="one_quarter"><a href="#"><img src="{% static 'images/demo/gallery/10f.png' %}" alt=""></a></li>
+            <li class="one_quarter"><a href="#"><img src="{% static 'images/demo/gallery/11f.png' %}" alt=""></a></li>
+            <li class="one_quarter"><a href="#"><img src="{% static 'images/demo/gallery/12f.png' %}" alt=""></a></li>
+          </ul>
+          <!-- <figcaption>Gallery Description Goes Here</figcaption> -->
+        </figure>
+      </div>
+      <!-- ################################################################################################ -->
+      <!-- ################################################################################################ -->
+      <!-- <nav class="pagination">
+        <ul>
+          <li><a href="#">&laquo; Previous</a></li>
+          <li><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><strong>&hellip;</strong></li>
+          <li><a href="#">6</a></li>
+          <li class="current"><strong>7</strong></li>
+          <li><a href="#">8</a></li>
+          <li><a href="#">9</a></li>
+          <li><strong>&hellip;</strong></li>
+          <li><a href="#">14</a></li>
+          <li><a href="#">15</a></li>
+          <li><a href="#">Next &raquo;</a></li>
+        </ul>
+      </nav> -->
+      <!-- ################################################################################################ -->
+    </div>
+    <!-- ################################################################################################ -->
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+
+
+
+
+
+
+
+<div class="wrapper row5">
+  <footer id="footer" class="clear"> 
+    <div class="one_quarter first">
+      <h6 class="title">Contacto</h6>
+      <address class="btmspace-15">
+      Discord Inc<br>
+      
+
+      
+      </address>
+      <ul class="nospace">
+        <li class="btmspace-10"><span class="fa fa-phone"></span> 4471165588</li>
+        <li><span class="fa fa-envelope-o"></span> discord@gmail.com</li>
+      </ul>
+      
+    </div>
+    <div class="one_quarter">
+      <h6 class="title">Links rápidos</h6>
+      <ul class="nospace linklist">
+        <li><a href="{% url 'inicio' %}">Inicio</a></li>
+        <li><a href="{% url 'sidebarl' %}">Noticias</a></li>
+        <li><a href="{% url 'gallery' %}">Galeria</a></li>
+        <li><a href="{% url 'full' %}">Acerca de</a></li>
+        <li><a href="{% url 'basic' %}">Comentarios</a></li>
+      </ul>
+    </div>
+    <div class="one_quarter", id="yon">
+      <h6 class="title">Fecha de actualización</h6>
+      <article>
+        {% for actualizaciones in Actualizacion  %}
+        <h2 class="nospace">{{ actualizaciones.nombre_act }}</h2>
+        <time class="smallfont" datetime="2022-02-02">{{ actualizaciones.fecha_act }}</time>
+       
+        {% endfor %}
+   
+      </article>
+    </div>
+    <div class="one_quarter">
+      <h6 class="title">Contactanos</h6>
+      <form method="post" action="#">
+        <fieldset>
+          <legend>Newsletter:</legend>
+          <input class="btmspace-15" type="text" value="" placeholder="Nombre">
+          <input class="btmspace-15" type="text" value="" placeholder="Correo">
+          <button type="submit" value="submit">Enviar</button>
+        </fieldset>
+      </form>
+    </div>
+  </footer>
+
+
+
+{% endblock %}
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->

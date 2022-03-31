@@ -1,0 +1,200 @@
+
+{% extends "app/base.html" %}
+{% load static %}
+
+
+
+{% block contenido %}
+
+
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row2 bgded" style="background-image:url('{% static 'images/demo/backgrounds/6e.png' %}');">
+  <div class="overlay">
+    <section id="pageintro" class="clear"> 
+      <!-- ################################################################################################ -->
+      <div class="center btmspace-80">
+        <h2 class="heading xxl uppercase btmspace-30">DISCORD</h2>
+        <p class="xl nospace capitalise">Tu sitio para hablar
+        </p>
+        <!-- Linea de busqueda ######################################################################################### -->
+
+        <!-- <div class="container">
+          <div class="row">
+            <div class="col-md-12 search">
+              <form method="get">
+                <div id="custom-search-input">
+                  <div class="input-group col-md-12">
+                    <input type="text" class="form-control" placeholder="Buscar..." name="buscar">
+                    <span class="input-group-list">
+                      <i class="icon-search"></i>
+                      <button type="submit" class="boton btn-success">Buscar</button> 
+                    </span>
+                  </div>
+                </div>
+              </form>
+            </div>
+        </div> -->
+
+
+
+
+
+        <!-- ######################################################################################### -->
+
+      </div>
+      <ul class="nospace group services">
+        <li class="one_third first">
+         <article class="overlay"><a href="{% url 'full' %}"><i class="fa fa-users"></i></a>
+            <h6 class="heading">Acerca de</h6>
+            <p>Donde tu mundo pasa el rato. Discord es un servicio de comunicación por voz, vídeo y texto que usan más de cien millones de personas para pasar el rato y hablar con sus amigos y comunidades.&hellip;</p>
+            <footer><a href="{% url 'full' %}">Leer más &raquo;</a></footer>
+          </article>
+        </li>
+        <li class="one_third">
+          <article class="overlay"><a href="{% url 'sidebarl' %}"><i class="fa fa-bell"></i></a>
+            <h6 class="heading">Noticias</h6>
+            <p>Discord es el lugar donde el mundo pasa el rato y forma vínculos con sus comunidades y amigos.&hellip;</p>
+            <footer><a target="Blank" href="{% url 'sidebarl' %}">Leer más &raquo;</a></footer>
+          </article>
+        </li>
+        <li class="one_third">
+          <article class="overlay"><a target="Blank" href="https://discord.com/jobs"><i class="fa fa-archive
+            "></i></a>
+            <h6 class="heading">Empleos</h6>
+            <p>Discord lo forma gente apasionada que valora nuestra misión: darte el poder de crear un sentimiento de pertenencia en tu vida.&hellip;</p>
+            <footer><a target="Blank" href="https://discord.com/jobs">Leer más &raquo;</a></footer>
+          </article>
+        </li>
+      </ul>
+      <!-- ################################################################################################ -->
+    </section>
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row3">
+  <main class="container clear"> 
+    <!-- main body -->
+    <!-- ################################################################################################ -->
+    <div class="group">
+      <div class="one_third first"><img src="{% static 'images/demo/9g.gif' %}" alt=""></div>
+      <div class="two_third">
+        <h2 class="heading xxl uppercase btmspace-30">Crea un lugar solo para miembros en el que encajes</h2>
+        <p>Los servidores de Discord se organizan en canales ordenados por temas donde puedes colaborar, compartir o simplemente hablar de tu día sin monopolizar un chat de grupo.</p>
+        <h2 class="heading">Donde es fácil pasar el rato</h2>
+        <p class="btmspace-80">Entra en un canal de voz cuando estés libre. Los amigos que tengas en tu servidor podrán ver que estás conectado y unirse al instante para hablar sin necesidad de llamar.</p>
+        <ul class="nospace group">
+          <li class="one_third first">
+            <h6 class="nospace btmspace-10"><a href="{% url 'basic' %}"><i class="fa fa-location-arrow"></i> Escribenos</a></h6>
+            <p class="nospace">Tu opinionó también importa&hellip;</p>
+          </li>
+          <li class="one_third">
+            <h6 class="nospace btmspace-10"><a target="Blank" href="https://discord.com/safety"><i class="fa fa-lock"></i> Ineractua con seguridad</a></h6>
+            <p class="nospace">Juega comunicate y diviertete&hellip;</p>
+          </li>
+          <li class="one_third last">
+            <h6 class="nospace btmspace-10"><a target="Blank" href="https://discord.com/download"><i class="fa fa-map-marker"></i>Discord más cerca de ti</a></h6>
+            <p class="nospace">Discord es compatible con la mayoria de sistemas operativos&hellip;</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- ################################################################################################ -->
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row4">
+  <section id="info" class="clear"> 
+    <!-- ################################################################################################ -->
+    <div class="center btmspace-80">
+      <h2 class="heading uppercase btmspace-30">UNA TECNOLOGÍA FIABLE PARA MANTENERSE EN CONTACTO</h2>
+      <p class="lrspace">Gracias a la voz y el vídeo de baja latencia, parece que estas en la misma habitación. Saluda a la cámara, accede a las transmisiones de los juegos de tus amigos o reuniones y disfrutar de una sesión de dibujo compartiendo la pantalla.</p>
+    </div>
+    <div class="group">
+      <div class="one_half first"><img src="{% static 'images/demo/download.png' %}" alt=""></div>
+      <div class="one_half">
+        <ul class="nospace group services">
+
+          {% for descargas in Descargas  %}
+          <li>
+            <article><a target="Blank" href="{{ descargas.enlace }}"><i class="fa fa-download"></i></a>
+              <h6 class="heading">{{ descargas.nombre_descarga }}</h6>
+              <p>Discord es compatible con varios sitemas operativos &hellip;</p>
+              <footer><a target="Blank" href="{{ descargas.enlace }}">Descargar &raquo;</a></footer>
+            </article>
+          </li>
+          {% endfor %}
+          
+        
+        </ul>
+      </div>
+    </div>
+    
+    <!-- ################################################################################################ -->
+    <div class="clear"></div>
+  </section>
+</div>
+<div class="wrapper row5">
+  <footer id="footer" class="clear"> 
+    <div class="one_quarter first">
+      <h6 class="title">Contacto</h6>
+      <address class="btmspace-15">
+      Discord Inc<br>
+      
+
+      
+      </address>
+      <ul class="nospace">
+        <li class="btmspace-10"><span class="fa fa-phone"></span> 4471165588</li>
+        <li><span class="fa fa-envelope-o"></span> discord@gmail.com</li>
+      </ul>
+      
+    </div>
+    <div class="one_quarter">
+      <h6 class="title">Links rápidos</h6>
+      <ul class="nospace linklist">
+        <li><a href="{% url 'inicio' %}">Inicio</a></li>
+        <li><a href="{% url 'sidebarl' %}">Noticias</a></li>
+        <li><a href="{% url 'gallery' %}">Galeria</a></li>
+        <li><a href="{% url 'full' %}">Acerca de</a></li>
+        <li><a href="{% url 'basic' %}">Comentarios</a></li>
+      </ul>
+    </div>
+    <div class="one_quarter" id="yon">
+      <h6 class="title">Fecha de actualización</h6>
+      <article>
+        {% for actualizaciones in Actualizacion  %}
+        <h2 class="nospace">{{ actualizaciones.nombre_act }}</h2>
+        <time class="smallfont" datetime="2022-02-02">{{ actualizaciones.fecha_act }}</time>
+       
+        {% endfor %}
+   
+      </article>
+    </div>
+    <div class="one_quarter">
+      <h6 class="title">Contactanos</h6>
+      <form method="post" action="#">
+        <fieldset>
+          <legend>Newsletter:</legend>
+          <input class="btmspace-15" type="text" value="" placeholder="Nombre">
+          <input class="btmspace-15" type="text" value="" placeholder="Correo">
+          <button type="submit" value="submit">Enviar</button>
+        </fieldset>
+      </form>
+    </div>
+  </footer>
+
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+
+{% endblock %}
+
+

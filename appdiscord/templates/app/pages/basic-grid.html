@@ -1,0 +1,164 @@
+{% extends "app/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block contenido %}
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row2 bgded" style="background-image:url('{% static 'images/demo/backgrounds/3.png' %}');">
+  <div class="overlay">
+    <div id="breadcrumb" class="clear"> 
+      <!-- ################################################################################################ -->
+      <ul>
+        <!-- <li><a href="{% url 'inicio' %}">Inicio</a></li>
+        <li><a href="{% url 'sidebarl' %}">Noticias</a></li>
+        <li><a href="{% url 'full' %}">Acerca de</a></li>
+        <li ><a href="{% url 'gallery' %}">Galeria</a></li> -->
+        <li><a href="{% url 'basic' %}">Comentarios</a></li>
+        
+        
+      
+        
+      </ul>
+      <!-- ################################################################################################ -->
+    </div>
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row3">
+  <main class="container clear"> 
+    <!-- main body -->
+    <!-- ################################################################################################ -->
+    <div class="content"> 
+      <!-- ################################################################################################ -->
+      <h1>Envia tu comentario</h1>
+      <div id="comments">
+        <h2>Comentarios</h2>
+        <ul>
+          {% for comment in Comentarios %}
+          <li>
+            <article>
+              <header>
+                <figure class="avatar"><img src="{% static 'images/demo/avatar2.png' %}" alt=""></figure>
+                <address>
+                By <a> {{ comment.nombre }} </a>
+                </address>
+                <time datetime="2021-04-07T08:15+00:00">Viernes, 7<sup>th</sup> Abril 2021 @08:15:00</time>
+              </header>
+              <div class="comcont">
+                <p>Yo uso Discord para comunicarme mientras juego.</p>
+              </div>
+            </article>
+          </li>
+          {% endfor %}
+          <!-- <li>
+            <article>
+              <header>
+                <figure class="avatar"><img src="{% static 'images/demo/avatar1.png' %}" alt=""></figure>
+                <address>
+                By <a >Lola</a>
+                </address>
+                <time datetime="2021-04-07T08:15+00:00">Viernes, 7<sup>th</sup> Abril 2021 @08:15:00</time>
+              </header>
+              <div class="comcont">
+                <p>Jamas he usado discord espero que sea muy bueno y facil de usar.</p>
+              </div>
+            </article>
+          </li> -->
+          <!-- <li>
+            <article>
+              <header>
+                <figure class="avatar"><img src="{% static 'images/demo/avatar3.png' %}" alt=""></figure>
+                <address>
+                By <a >Pedro</a>
+                </address>
+                <time datetime="2021-04-07T08:15+00:00">Viernes, 7<sup>th</sup> Abril 2021 @08:15:00</time>
+              </header>
+              <div class="comcont">
+                <p>Muy buena información de Discord, me gusta que haya links para poderlo descargar.</p>
+              </div>
+            </article>
+          </li> -->
+        </ul>
+        <h2>Escribe un comentario</h2>
+        <form action="" method="post">
+      
+
+          {% csrf_token %}
+          {{ form }}
+          
+          <div>
+            <input name="submit" type="submit" value="Enviar">
+            &nbsp;
+            <input name="reset" type="reset" value="Restablecer formulario">
+          </div>
+        </form>
+      </div>
+      <!-- ################################################################################################ -->
+    </div>
+    <!-- ################################################################################################ -->
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+
+<div class="wrapper row5">
+  <footer id="footer" class="clear"> 
+    <div class="one_quarter first">
+      <h6 class="title">Contacto</h6>
+      <address class="btmspace-15">
+      Discord Inc<br>
+      
+
+      
+      </address>
+      <ul class="nospace">
+        <li class="btmspace-10"><span class="fa fa-phone"></span> 4471165588</li>
+        <li><span class="fa fa-envelope-o"></span> discord@gmail.com</li>
+      </ul>
+      
+    </div>
+    <div class="one_quarter">
+      <h6 class="title">Links rápidos</h6>
+      <ul class="nospace linklist">
+        <li><a href="{% url 'inicio' %}">Inicio</a></li>
+        <li><a href="{% url 'sidebarl' %}">Noticias</a></li>
+        <li><a href="{% url 'gallery' %}">Galeria</a></li>
+        <li><a href="{% url 'full' %}">Acerca de</a></li>
+        <li><a href="{% url 'basic' %}">Comentarios</a></li>
+      </ul>
+    </div>
+    <div class="one_quarter" id="yon">
+      <h6 class="title">Fecha de actualización</h6>
+      <article>
+        {% for actualizaciones in Actualizacion  %}
+        <h2 class="nospace">{{ actualizaciones.nombre_act }}</h2>
+        <time class="smallfont" datetime="2022-02-02">{{ actualizaciones.fecha_act }}</time>
+       
+        {% endfor %}
+   
+      </article>
+    </div>
+    <div class="one_quarter">
+      <h6 class="title">Contactanos</h6>
+      <form method="post" action="#">
+        <fieldset>
+          <legend>Newsletter:</legend>
+          <input class="btmspace-15" type="text" value="" placeholder="Nombre">
+          <input class="btmspace-15" type="text" value="" placeholder="Correo">
+          <button type="submit" value="submit">Enviar</button>
+        </fieldset>
+      </form>
+    </div>
+  </footer>
+
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+{% endblock %}
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
