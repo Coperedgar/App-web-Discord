@@ -32,7 +32,7 @@ urlpatterns = [
     path('notis/', notis, name='notis'),
     path('buscar/', buscar, name='buscar'),
     path('registro/', Registro.as_view, name='registro'),
-    path('login/', CustomLoginView.as_view(redirect authenticated_user=True, template_name='app/pages/login.html', authentication_form=loginForm), name='login'),
+    path('login/', CustomLoginView.as_view(redirect_authenticated_user=True, template_name='app/pages/login.html', authentication_form=loginForm), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='app/pages/logout.html'), name='logout'),    
 
     
