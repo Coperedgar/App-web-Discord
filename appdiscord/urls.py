@@ -18,7 +18,7 @@ from django.conf.urls.static import static
 from django.urls import path, include
 from .views import index, nosotros, gallery, basic, sidebarr, sidebarl, full_width, buscar, admin, notis, Registro, CustomLoginView
 from .forms import loginForm
-from django.contrib.auth.models import views as auth_views
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('', index, name='inicio'),
