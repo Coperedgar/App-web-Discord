@@ -127,6 +127,10 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 django_heroku.settings(locals())
 
+SESSION_COOKIE_AGE = 60 + 60 + 24 + 5
+LOGGIN_REDIRECT_URL = '/'
+LOGGIN_URL = 'login'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 

@@ -16,7 +16,9 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path, include
-from .views import index, nosotros, gallery, basic, sidebarr, sidebarl, full_width, buscar, admin, notis
+from .views import index, nosotros, gallery, basic, sidebarr, sidebarl, full_width, buscar, admin, notis, Registro, CustomLoginView
+from .forms import loginForm
+from django.contrib.auth.models import views as auth_views
 
 urlpatterns = [
     path('', index, name='inicio'),
@@ -29,6 +31,9 @@ urlpatterns = [
     path('admin', admin, name='admin'),
     path('notis/', notis, name='notis'),
     path('buscar/', buscar, name='buscar'),
+    path('registro/', Registro.as_view, name='registro'),
+    path('login/', CustomLoginView.as_view(redirect authenticated_user=True, template_name='app/pages/login.html', authentication_form=loginForm), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(template_name='app/pages/logout.html'), name='logout'),    
 
     
     

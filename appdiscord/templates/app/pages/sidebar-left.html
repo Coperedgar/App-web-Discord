@@ -132,3 +132,14 @@
 <!-- ################################################################################################ -->
 
 {% endblock %}
+
+{% block scripts %}
+<script type="text/javascript">
+  const noticia = document.getElementById("servicios");
+  const primero = noticia.firstElementChild;
+  const ultimo = noticia.lastElementChild;
+  primero.classList.add("first");
+  ultimo.classList.add("last");
+</script>
+
+{% endblock %}
