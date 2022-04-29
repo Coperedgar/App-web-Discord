@@ -42,14 +42,14 @@
           <li>
             <article>
               <header>
-                <figure class="avatar"><img src="{% static 'images/demo/avatar2.png' %}" alt=""></figure>
+                <!-- <figure class="avatar"><img src="{% static 'images/demo/avatar2.png' %}" alt=""></figure> -->
                 <address>
                 By <a> {{ comment.nombre }} </a>
                 </address>
-                <time datetime="2021-04-07T08:15+00:00">Viernes, 7<sup>th</sup> Abril 2021 @08:15:00</time>
+                <!-- <time datetime="2021-04-07T08:15+00:00">Viernes, 27 Abril 2022</time> -->
               </header>
               <div class="comcont">
-                <p>Yo uso Discord para comunicarme mientras juego.</p>
+                <p>{{ comment.comentario }}</p>
               </div>
             </article>
           </li>
@@ -89,7 +89,8 @@
 
           {% csrf_token %}
           {{ form }}
-          
+          <br>
+          <br>
           <div>
             <input name="submit" type="submit" value="Enviar">
             &nbsp;
@@ -142,16 +143,13 @@
    
       </article>
     </div>
-    <div class="one_quarter">
-      <h6 class="title">Contactanos</h6>
-      <form method="post" action="#">
-        <fieldset>
-          <legend>Newsletter:</legend>
-          <input class="btmspace-15" type="text" value="" placeholder="Nombre">
-          <input class="btmspace-15" type="text" value="" placeholder="Correo">
-          <button type="submit" value="submit">Enviar</button>
-        </fieldset>
-      </form>
+      <div class="one_quarter">
+        <h6 class="title">Comentanos</h6>
+        <li><a href="{% url 'basic' %}">Envianos tu comentario</a></li></h3>
+        <h2>Tu opinión importa</h2>
+        <br>
+        <br>
+      </div>
     </div>
   </footer>
 

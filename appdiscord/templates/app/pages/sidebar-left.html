@@ -21,30 +21,19 @@
       </div>
 
       
-      <!-- <ul class="nospace group services">
-
-
+      <ul id="servicios" class="nospace group services">
         {% for noticias in Noticias  %}
-        <li class="">
+        <li class="one_third">
          <article class="overlay"><a target="Blank" href="https://www.npr.org/2021/03/31/983157378/group-chatting-platform-discord-might-change-social-media-with-their-business-mo"><i class="fa fa-info"></i></a>
             <h6 class="heading"> {{ noticias.encabezado }} </h6>
             <p> {{ noticias.descripcion }} &hellip;</p>
             <footer><a target="Blank" href="https://www.npr.org/2021/03/31/983157378/group-chatting-platform-discord-might-change-social-media-with-their-business-mo">Leer más &raquo;</a></footer>
           </article>
         </li>
-        <br> <br>
         {% endfor %}
-
-
-        </ul> -->
-
+        </ul>
       </div>
     </div>
-
-
-
-
-
 
 
 
@@ -55,7 +44,7 @@
 
 
 
-<div class="container">
+<!-- <div class="container">
   <div class="row">
     {% for noticias in Noticias  %}
     <div class="col-6 col-sm-4 col-md-3">
@@ -71,7 +60,7 @@
     </div>
     {% endfor %}
   </div>
-</div>
+</div> -->
 
 
 
@@ -114,16 +103,13 @@
       </article>
     </div>
     <div class="one_quarter">
-      <h6 class="title">Contactanos</h6>
-      <form method="post" action="#">
-        <fieldset>
-          <legend>Newsletter:</legend>
-          <input class="btmspace-15" type="text" value="" placeholder="Nombre">
-          <input class="btmspace-15" type="text" value="" placeholder="Correo">
-          <button type="submit" value="submit">Enviar</button>
-        </fieldset>
-      </form>
+      <h6 class="title">Comentanos</h6>
+      <li><a href="{% url 'basic' %}">Envianos tu comentario</a></li></h3>
+      <h2>Tu opinión importa</h2>
+      <br>
+      <br>
     </div>
+  </div>
   </footer>
 
 
@@ -134,10 +120,14 @@
 {% endblock %}
 
 {% block scripts %}
+
 <script type="text/javascript">
-  const noticia = document.getElementById("servicios");
-  const primero = noticia.firstElementChild;
-  const ultimo = noticia.lastElementChild;
+  const product = document.getElementById("servicios");
+  console.log(product);
+  const primero = product.firstElementChild;
+  const ultimo = product.lastElementChild;
+  product.classList.add("last");
+  product.classList.add("first");
   primero.classList.add("first");
   ultimo.classList.add("last");
 </script>

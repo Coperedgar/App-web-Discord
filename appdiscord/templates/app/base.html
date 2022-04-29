@@ -96,13 +96,16 @@
         <li ><a href="{% url 'sidebarl' %}">Noticias</a></li>
         <li ><a href="{% url 'basic' %}">Comentarios</a></li>
         <li ><a href="{% url 'full' %}">Acerca de</a></li>
-        <li class="active"><a href="/admin/">Admin</a></li>
+        <li ><a href="/digits">Digits</a></li>
+        <li ><a href="/admin/">Admin</a></li>
+        
 
-        <li><a href="{% url '% registro %'}" data-title="register"><span>Registro</span></a></li>
+
+        <li><a href="{% url 'registro' %}" data-title="register"><span>Registro</span></a></li>
         {% if user.is_authenticated %}
-        <li><a href="{% url '% logout %'}" data-title="logout"><span>Logout</span></a></li>
+        <li class="active"><a href="{% url 'logout' %}" data-title="logout"><span>Logout</span></a></li>
         {% else %}
-        <li><a href="{% url '% login %'}" data-title="login"><span>Login</span></a></li>
+        <li class="active"><a href="{% url 'login' %}" data-title="login"><span>Login</span></a></li>
         {% endif %}
       </ul>
 
@@ -199,6 +202,7 @@
 <script src="{% static 'layout/scripts/jquery.min.js' %}"></script>
 <script src="{% static 'layout/scripts/jquery.backtotop.js' %}"></script>
 <script src="{% static 'layout/scripts/jquery.mobilemenu.js' %}"></script>
+<script src="{% static 'layout/scripts/servicios.js' %}"></script>
 {% block scripts %}
 
 {% endblock %}
